@@ -13,6 +13,24 @@ import VueResource from 'vue-resource'
 //安装vue-resource
 Vue.use(VueResource)
 
+//导入vue-jsonp
+import VueJsonp from 'vue-jsonp'
+Vue.use(VueJsonp)
+
+
+//设置请求的根路径
+Vue.http.options.root = 'http://vue.studyit.io'
+
+
+
+//导入时间插件
+import moment from 'moment'
+
+//定义全局的过滤器
+Vue.filter('dateFormat',function(dataStr,pattern = "YYYY-MM-DD HH:mm:ss"){
+  return moment(dataStr).format(pattern)
+})
+
 
 //导入MUI的样式
 import './lib/mui/css/mui.min.css'
